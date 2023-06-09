@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Strona z zagadkami</title>
+    <style>
+        body {
+            background-image: url('https://cdn.discordapp.com/attachments/695983039418859582/1115036501647036488/IMG_0852.png');
+            background-size: contain;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        
+        #main-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        #input-box {
+            margin-bottom: 20px;
+        }
+        
+        #message {
+            color: red;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        #youtube-video {
+            margin-top: 20px;
+        }
+		
+		#zagadka {
+		     color: white;
+			 
+		}
+    </style>
+</head>
+<body>
+    <div id="main-container">
+        <h1 id="zagadka">Wprowadź odpowiedź do zagadki:</h1>
+        <input type="text" id="input-box">
+        <button onclick="checkAnswer()">Sprawdź</button>
+        <p id="message"></p>
+        
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/wPPs84DJmFc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen id="youtube-video"></iframe>
+    </div>
+    
+    <script>
+        function checkAnswer() {
+            var answer = document.getElementById("input-box").value;
+            
+            if (answer === "inside joke") {
+                window.location.href = "8.html";
+            } else {
+                document.getElementById("message").textContent = "Spróbuj jeszcze raz.";
+            }
+        }
+    </script>
+</body>
+</html>
